@@ -1,0 +1,50 @@
+<?php include('server.php') ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sudoku solver</title>
+    <link rel="stylesheet" href="login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+  <form method="post" action="login.html">
+    <?php include('errors.php'); ?>
+    <h1>LOGIN</h1>
+    <div class="input-box">
+        <input class="username" type="text" placeholder="username"
+        required>
+        <box-icon name='user'></box-icon>
+    </div>
+    <div class="input-box">
+        <input class="password" type="password" placeholder="password"
+        required>
+        <box-icon name='lock-alt' type='solid' ></box-icon>
+    </div>
+    <div class="remember-forgot">
+        <label><input type="checkbox">Remember me</label>
+        <a href="forget.html">Forgot password?</a>
+    </div>
+
+    <button type="submit" class="button"><a href="enter.html">login</a></button>
+
+    <div class="register-link">
+        <p>Don't have an account? <a href="registration.html">Register</a></p>
+    </div>
+  </form>
+    </div>
+    <script>
+        document.querySelector('.button').onclick = function(){
+            var password = document.querySelector('.password').value,
+            username = document.querySelector('.username').value;
+
+            if(password == "" || username == ""){
+                alert("Field cannot be empty.");
+            }
+        }
+        </script>
+        
+</body>
+</html>

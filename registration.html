@@ -1,0 +1,50 @@
+<?php include('server.php') ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+    <div class="Registration-form">
+        <h5>Registration Form</h5><br>
+        <form action="registration.html" method="post">
+            <p>User Name:</p>
+            <input class="username" type="text" name="username" placeholder="User Name" required>
+            <p>E-mail:</p>
+            <input class="email" type="email" name="email" placeholder="E-mail" required><br>
+            <p>Password:</p>
+            <input class="password" type="password" name="password_1" placeholder="Password" required><br>
+            <p> Confirm Password:</p>
+            <input class="confirmPassword" type="password" name="password_2" placeholder="Confirm Password" required><br>
+            <br>
+            <button class="button" type="submit"><a href="login.html">Register</a></button>
+        </form>
+
+    </div>
+
+    <script>
+        document.querySelector('.button').onclick = function(){
+            var password = document.querySelector('.password').value,
+            confirmPassword = document.querySelector('.confirmPassword').value,
+            username = document.querySelector('.username').value,
+            email = document.querySelector('.email').value;
+
+            if(password == "" || username == "" || email == ""){
+                alert("Field cannot be empty.");
+            }
+            else if(password != confirmPassword){
+                alert("Password didn't match try again.");
+                return false
+            }
+            else if(password == confirmPassword){
+                alert("Registration successful.");
+                return true
+            }
+        }
+    </script>
+    
+</body>
+</html>
